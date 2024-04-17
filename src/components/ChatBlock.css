@@ -1,0 +1,142 @@
+:root {
+    --main-bg-color: #f0f0f0;
+    --accent-bg-color: #d3a21d;
+    --text-color-light: #fff;
+    --text-color-dark: #000;
+    --btn-hover-color: #af8616;
+}
+
+
+.chat-block, .message-container {
+    max-width: 100%;
+    overflow-y: auto;
+}
+
+
+.chat-block {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-self: self-start;
+    background-image: url(./body-texture.webp);
+}
+
+.message-container::-webkit-scrollbar {
+    display: none;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 55px;
+}
+
+
+.message {
+    padding: 8px;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+
+.user-message, .received-message {
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: var(--accent-bg-color);
+    color: var(--text-color-light);
+}
+
+.received-message {
+    background-color: var(--main-bg-color);
+}
+
+.chat-input-container {
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    padding: 10px;
+    align-items: flex-end;
+}
+
+.chat-input {
+    min-height: 40px;
+    max-height: 180px;
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid var(--accent-bg-color);
+    outline: none;
+    padding: 8px;
+    transition: border-bottom 0.3s ease;
+    resize: none;
+    background-color: var(--main-bg-color);
+    border-radius: 10px;
+}
+
+.chat-input::-webkit-scrollbar {
+    display: none;
+}
+
+
+.chat-input:focus {
+    border-bottom: 2px solid var(--text-color-dark);
+}
+
+
+.sent-btn {
+    max-height: 40px;
+    margin-left: 10px;
+    background-color: var(--accent-bg-color);
+    border-radius: 5px;
+    color: var(--text-color-light);
+    border: none;
+    padding: 5px 70px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sent-btn:hover {
+    background-color: var(--btn-hover-color);
+}
+
+@media (max-width: 600px) {
+    .chat-block{
+        margin-bottom: 60px;
+    }
+    .message {
+        width: 90%;
+    }
+
+    .chat-input-container {
+        width: 100%;
+        flex-direction: column;
+        padding: 5px;
+        align-self: center;
+    }
+    .chat-input{
+        width: 100%;
+    }
+    .sent-btn {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 5px;
+        justify-content: center;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .message-container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
